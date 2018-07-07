@@ -54,7 +54,7 @@ class Dog
     sql = "SELECT * FROM dogs WHERE id = ?"
     attribute_hash = DB[:conn].execute(sql, id)[0]
     binding.pry
-    Dog.new(attribute_hash)
+    Dog.new_from_db
   end
 
   def self.new_from_db(row)
